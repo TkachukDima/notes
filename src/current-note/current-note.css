@@ -1,0 +1,156 @@
+/* .current-note {
+    position: fixed;
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+   
+
+    z-index: 1;
+}
+
+.note-inner {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #000;
+    opacity: 0.8;
+    
+} */
+
+.wrapper-current-note {
+    margin-top: 15px;
+    border: 1px solid red;
+    border-radius: 15px;
+    background-color: rgba(197, 255, 174, 0.3);
+    
+}
+
+.current-note {
+    
+    margin: 50px auto;
+    min-height: 300px;
+    width: 500px;
+    padding: 5px;
+    background-color: rgb(255, 255, 92);
+    border: 1px solid #000;
+    border-radius: 15px;
+    color: #000;
+}
+
+.title-comments {
+    text-align: center;
+    text-decoration-line: underline;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.note {
+    position: relative;
+   
+}
+
+.box-note {
+    margin: 0 0 30px;
+    height: 100%;
+    
+}
+
+.note {
+    display: grid;
+}
+
+
+
+.btn-edit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 10px;
+
+}
+
+.btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 10px;
+
+}
+
+.note-comments {
+    width: 100%;
+    
+    /* background-color: #ccc; */
+    margin-top: 20px;
+}
+
+.btn-comments {
+    margin: 5px 0;
+    text-align: right;
+}
+
+.btn-comments>button {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 0 5px;
+
+}
+
+.item-comment {
+    margin: 15px;
+    border-bottom: 1px solid red;
+}
+
+.item-comment .author {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.item-comment .content {
+    font-size: 12px;
+}
+
+.item-comment .create-date {
+    font-size: 12px;
+    color: rgb(66, 64, 64);
+}
+
+.name-note {
+    width: 70%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 25px;
+    margin: 0 auto;
+}
+
+.content-note {
+    font-size: 16px;
+} 
+
+.input-name-comment {
+    margin: 10px 0;
+}
+
+.input-name-comment::placeholder, .input-content-comment::placeholder {
+    font-size: 14px;
+}
+
+
+.button-add-comment {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.button-add-comment>button {
+    margin: 0;
+    padding: 0 30px;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}

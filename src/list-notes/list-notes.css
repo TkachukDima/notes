@@ -1,0 +1,40 @@
+.btn-new-note {
+    display: block;
+    margin: 15px auto;
+
+}
+
+.listNotes {
+    display: flex;
+    flex-wrap: wrap;
+    /* grid-template-columns: 25% 25% 25% 25%; */
+    justify-content: space-around;
+   
+}
+
+.list-notes {
+    margin-top: 15px;
+    border: 1px solid red;
+    border-radius: 15px;
+    background-color: rgba(161, 252, 255, 0.5);
+}
+
+.notes_item {
+    
+    min-height: 100px;
+    margin: 20px 15px;
+    width: 200px;
+    background-color: yellow;
+    text-align: center;
+    
+}
+
+.name {
+    font-weight: 700;
+}
+
+
+
+.content {
+    width: 100%;
+}
