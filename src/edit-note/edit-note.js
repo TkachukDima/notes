@@ -18,14 +18,12 @@ class EditNote extends Component {
         this.setState({
             name:e.target.value
         })
-        console.log(e.target.value);
     }
 
     changeContentNote = (e) => {
         this.setState({
             content:e.target.value
         })
-        console.log(e.target.value);
     }
 
     saveNote = () => {
@@ -35,7 +33,7 @@ class EditNote extends Component {
                 error: true
             })
         } else {
-            const note = {
+            let note = {
                 id: this.state.id,
                 name: this.state.name,
                 content: this.state.content
@@ -43,14 +41,14 @@ class EditNote extends Component {
     
             this.props.noteToSave(note);
         }
-        
-
     }
 
     render() {
 
-        const {id} = this.state;
-        let error = this.state.error ? <div className="error-edit-note">Fill in both fields!</div> : null;
+        let {error, id, name, content} = this.state;
+        let {hideCurrentNote, deleteNote} = this.props;
+        let errorBlock = error ? <div className="error-edit-note">Fill in both fields!</div> : null;
+
         return (
             <div className="box-wrapper">
                 <div className="box-wrapper-inner"></div>
@@ -58,21 +56,21 @@ class EditNote extends Component {
                 <div className="new-note">
                     <p>EDIT NOTE!</p>
                 </div>
-                {error}
+                {errorBlock}
                 <div className="input-name">
                     <input 
                             className="form-control" 
                             type="text" 
                             placeholder="Title"
                             onChange={(e) => {this.changeNameNote(e)}}
-                            value={this.state.name}
+                            value={name}
                             ></input>
                 </div>
                 <div className="input-content">
                     <textarea className="form-control " placeholder="Content"
                             onChange={(e) => {this.changeContentNote(e)}}
                             
-                            defaultValue={this.state.content}
+                            defaultValue={content}
                     ></textarea>
                 </div>
                 <div className="buttom-note">
@@ -83,10 +81,10 @@ class EditNote extends Component {
                             >Save</button>
                     <button type="button" 
                             className="btn btn-warning"
-                            onClick={ () => {this.props.hideCurrentNote()} }>Cancel</button>
+                            onClick={ () => hideCurrentNote() }>Cancel</button>
                     <button type="button" 
                             className="btn btn-danger"
-                            onClick={() => { this.props.deleteNote(id)  }}
+                            onClick={ () => deleteNote(id) }
                             >Delete</button>
                 </div>
             </div>

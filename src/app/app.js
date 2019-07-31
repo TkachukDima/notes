@@ -14,18 +14,16 @@ import CurrentNote from '../current-note/current-note';
 class App extends Component {
 
     render() {
-
+        let {visibleCurrentNote, visibleAddNewNote, visibleEditNewNote} = this.props;
         
-       const currentNote = this.props.visibleCurrentNote ? <CurrentNote /> : <ListNotes />;
-       const addNote = this.props.visibleAddNewNote ? <AddNote /> : null;
-       const editNote = this.props.visibleEditNewNote ? <EditNote /> : null;
+       let currentNote = visibleCurrentNote ? <CurrentNote /> : <ListNotes />;
+       let addNote = visibleAddNewNote ? <AddNote /> : null;
+       let editNote = visibleEditNewNote ? <EditNote /> : null;
        
        return (
            <div className="container">
                 {addNote}
                 {editNote}
-                
-                {/* <ListNotes /> */}
                 {currentNote}
            </div>
                 

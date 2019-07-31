@@ -12,49 +12,44 @@ export const noteToSave = (data) => {
         type: ACTION_SAVE_NOTE,
         payload: data
     }
-}
+};
 
 export const showCurrentNote = (data) => {
     return {
         type: ACTION_SHOW_CURRENT_NOTE,
         payload: data
     }
-}
+};
 
 export const hideCurrentNote = () => {
     return {
         type: ACTION_HIDE_CURRENT_NOTE,
-        
     }
-}
+};
 
 export const showFormNewNote = () => {
     return {
         type: ACTION_SHOW_FORM_NEW_NOTE,
-        
     }
-}
+};
 
 export const edidCurrentNote = () => {
     return {
         type: ACTION_EDIT_NOTE,
-        
     }
-}
+};
 
 export const deleteNote = (id) => {
     return {
         type: ACTION_DELETE_NOTE,
         payload: id
-        
     }
-}
+};
 
 export const addComment = (data) => {
     return {
         type: ACTION_SAVE_COMMENT,
         payload: data
-        
     }
-}
+};
 

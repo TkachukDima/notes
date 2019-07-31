@@ -17,14 +17,12 @@ class AddNote extends Component {
         this.setState({
             name:e.target.value
         })
-        console.log(e.target.value);
-    }
+        }
 
     changeContentNote = (e) => {
         this.setState({
             content:e.target.value
         })
-        console.log(e.target.value);
     }
 
     saveNote = () => {
@@ -34,7 +32,7 @@ class AddNote extends Component {
                 error: true
             })
         } else {
-            const note = {
+            let note = {
                 name: this.state.name,
                 content: this.state.content
             };
@@ -47,7 +45,9 @@ class AddNote extends Component {
 
     render() {
 
-        let error = this.state.error ? <div className="error-add-note">Fill in both fields!</div> : null;
+        let {error, name, content} = this.state;
+
+        let errorBlock = error ? <div className="error-add-note">Fill in both fields!</div> : null;
 
         return (
             <div className="box-wrapper">
@@ -56,21 +56,21 @@ class AddNote extends Component {
                 <div className="new-note">
                     <p>ADD NEW NOTE!</p>
                 </div>
-                {error}
+                {errorBlock}
                 <div className="input-name">
                     <input 
                             className="form-control" 
                             type="text" 
                             placeholder="Title"
                             onChange={(e) => {this.changeNameNote(e)}}
-                            value={this.state.name}
+                            value={name}
                             ></input>
                 </div>
                 <div className="input-content">
                     <textarea className="form-control " placeholder="Content"
                             onChange={(e) => {this.changeContentNote(e)}}
                             
-                            defaultValue={this.state.content}
+                            defaultValue={content}
                     ></textarea>
                 </div>
                 <div className="buttom-note">
