@@ -106,8 +106,7 @@ export const reduser = (state = initialState, action) => {
                 const noteDeleteId = action.payload;
                 const itemIndex = state.notes.findIndex((el) => el.id === noteDeleteId);
                 const newArrComments = state.comments.filter( (el) => el.idCurrentNote !== noteDeleteId );
-                console.log(newArrComments);
-
+    
                 return {
                     ...state,
                     comments: newArrComments,

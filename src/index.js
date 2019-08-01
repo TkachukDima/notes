@@ -9,13 +9,18 @@ import {Provider} from 'react-redux';
 import {reduser} from './store/redusers';
 import { loadState, saveState} from './store/localStorage';
 
+import {throttle} from './store/throttle';
+
 const persistedState = loadState();
 const store = createStore(reduser, persistedState);
 
 store.subscribe(() => {
-   saveState(store.getState());
+   throttle(() => {
+      saveState(store.getState());
+     }, 1000); 
  });
 
 ReactDOM.render( <Provider store={store}>
                     <App />
                  </Provider> , document.getElementById('root'));
+
