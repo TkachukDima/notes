@@ -15,9 +15,7 @@ const persistedState = loadState();
 const store = createStore(reduser, persistedState);
 
 store.subscribe(() => {
-   throttle(() => {
-      saveState(store.getState());
-     }, 1000); 
+   localStorage.setItem('state', JSON.stringify(store.getState()));
  });
 
 ReactDOM.render( <Provider store={store}>
